@@ -3,7 +3,7 @@
 Author:
   Matts966
 Version: 0.0.0
-License: MIT license
+License: GPL
 
 ==============================================================================
 CONTENTS						*skk-vconv.vim-contents*
