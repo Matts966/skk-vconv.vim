@@ -7,10 +7,10 @@ if !exists('g:skk_vconv#no_default_mappings')
   let g:skk_vconv#no_default_mappings = 0
 endif
 
-vnoremap <expr> <Plug>(skk-vconv:conv) skk_vconv#conv()
+vnoremap <Plug>(skk-vconv:conv) c<Cmd>call skk_vconv#conv()<CR>
 
 if !g:skk_vconv#no_default_mappings
-  silent! vnoremap <unique> <C-j> <Plug>(skk_vconv:conv)
+  silent! vmap <unique> <C-j> <Plug>(skk_vconv:conv)
 endif
 
 if !exists('g:skk_enable_henkan_command')
