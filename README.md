@@ -23,7 +23,9 @@ kakasi implementation on Python
 ...
 ```
 
-### [vim plug](https://github.com/junegunn/vim-plug) と [skkeleton](https://github.com/vim-skk/skkeleton) を使う例
+### [vim-plug](https://github.com/junegunn/vim-plug) と [Skkeleton](https://github.com/vim-skk/skkeleton) を使う例
+
+デフォルトでSkkeletonに対応しています。
 
 ```vim
 Plug 'Matts966/skk-vconv.vim'
