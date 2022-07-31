@@ -7,5 +7,5 @@ function! skk_vconv#conv() abort
   if roman =~ 'n$'
     let l:roman = roman . 'n'
   endif
-  call feedkeys(g:skk_enable_henkan_command . roman, 't')
+  call feedkeys(g:skk_vconv#enable_henkan_command . roman, 't')
 endfunction

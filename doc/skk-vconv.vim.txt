@@ -1,0 +1,120 @@
+*skk-vconv.vim.txt* skk-vconv.vim.vim
+
+Author:
+  Matts966
+Version: 0.0.0
+License: MIT license
+
+==============================================================================
+CONTENTS						*skk-vconv.vim-contents*
+
+Introduction			|skk-vconv.vim-introduction|
+Interface			|skk-vconv.vim-interface|
+  Keymappings			|skk-vconv.vim-keymappings|
+  Functions			|skk-vconv.vim-functions|
+FAQ				|skk-vconv.vim-faq|
+TODO				|skk-vconv.vim-todo|
+Changelog			|skk-vconv.vim-changelog|
+
+
+==============================================================================
+INTRODUCTION						*skk-vconv.vim-introduction* {{{
+
+|skk-vconv.vim| はSKKで間違えて確定してしまった文字列を後から変換するためのプラグインです。
+
+変換したい確定済み文字列をVisualモードで選択し、<C-J>で再変換をかけることができます。
+
+https://github.com/Matts966/skk-vconv.vim
+
+}}}
+==============================================================================
+INTERFACE				*skk-vconv.vim-interface* {{{
+------------------------------------------------------------------------------
+KEYMAPPINGS					*skk-vconv.vim-keymappings* {{{
+
+<Plug>(skk-vconv:conv) (v)		*<Plug>(skk-vconv:conv)*
+
+	Keymappings version of |skk_vconv#conv()|
+
+Default keymappings				*skk-vconv.vim-default-keymappings*
+----------------------
+<C-j> => <Plug>(skk-vconv:conv)   (v)
+
+}}}
+------------------------------------------------------------------------------
+VARIABLES					*skk-vconv.vim-variables* {{{
+
+
+使用しているSKKで、変換をスタートするコマンド
+------------------------------
+
+g:skk_vconv#enable_henkan_command			*g:skk_vconv#enable_henkan_command*
+							(Default: "\<C-r>=skkeleton#request('enable', [])\<CR>;")
+	skk-vconv.vim creates many kinds of directories/files
+	under this directory.
+	使用しているSKKで、変換をスタートするコマンドを設定してください。
+	デフォルトではskkeletonのコマンドが設定されます。
+	キーバインドは\でエスケープし、ダブルクオートを使用する必要があります。
+	デフォルトでは;が最後にあるように、変換ポイントを設定するところまでを文字列として設定してください。
+
+
+Keymappings
+-----------
+
+g:skk_vconv#no_default_mappings		*g:skk_vconv#no_default_mappings*
+							(Default: 0)
+	v:trueを設定すると |skk-vconv.vim-default-keymappings| を設定しません。
+
+}}}
+------------------------------------------------------------------------------
+FUNCTIONS					*skk-vconv.vim-functions* {{{
+
+skk_vconv#conv()			*skk_vconv#conv()*
+	Visualモードで選択した文字列を再変換する関数です。
+
+}}}
+}}}
+==============================================================================
+FAQ					*skk-vconv.vim-faq* {{{
+
+Q. 共通の要件は？
+A. Pykakasiを使用しています。 >
+
+   $ pip install pykakasi
+   $ kakasi
+   kakasi -h
+   usage: kakasi [-h] [-v] [-I I] [-O O] [-w] [-r {k,h,p}] [-s] [-S SEPARATOR] [-f] [-C] [-U]
+               	[-E {a,N}] [-J {a,H,K,N}] [-K {a,H,N}] [-H {a,K,N}] [-a {E,N}]
+
+   kakasi implementation on Python
+   ...
+
+Q. skkeletonでの使い方は？
+A. デフォルトの設定でskkeletonでは使用可能です。
+
+Q. eskkでの使い方は？
+A. 以下を設定してください。(TODO: 動作確認) >
+   let g:skk_vconv#enable_henkan_command = "\<C-r>=eskk#enable()\<CR>;"
+
+
+Q. skk.vimでの使い方は？
+A. 以下を設定してください。(TODO: 動作確認) >
+   let g:skk_vconv#enable_henkan_command = "\<C-r>=SkkEnable()\<CR>;"
+
+}}}
+==============================================================================
+TODO						*skk-vconv.vim-todo* {{{
+
+See this issue for known problems:
+https://github.com/Matts966/skk-vconv.vim/issues
+
+}}}
+==============================================================================
+CHANGELOG						*skk-vconv.vim-changelog* {{{
+
+0.0.0:
+-
+
+}}}
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl:noet:fdm=marker:fen

@@ -13,6 +13,6 @@ if !g:skk_vconv#no_default_mappings
   silent! vmap <unique> <C-j> <Plug>(skk-vconv:conv)
 endif
 
-if !exists('g:skk_enable_henkan_command')
-  let g:skk_enable_henkan_command = "\<C-r>=skkeleton#request('enable', [])\<CR>;"
+if !exists('g:skk_vconv#enable_henkan_command')
+  let g:skk_vconv#enable_henkan_command = "\<C-r>=skkeleton#request('enable', [])\<CR>;"
 endif
