@@ -28,3 +28,15 @@ kakasi implementation on Python
 ```vim
 Plug 'Matts966/skk-vconv.vim'
 ```
+
+全体の設定例は以下にもあります。
+
+https://github.com/Matts966/dotfiles-open/blob/main/.vimrc#L105-L146
+
+## ドキュメント
+
+他のSKKで利用する場合や、より詳しいオプションなどはドキュメントを参照してください。
+
+```vim
+:h skk-vconv.vim
+```
