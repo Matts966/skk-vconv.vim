@@ -15,5 +15,5 @@ endif
 
 if !exists('g:skk_vconv#enable_henkan_command')
   let g:skk_vconv#enable_henkan_command =
-        \ "\<C-r>=skkeleton#request('enable', [])\<CR>;"
+        \ "\<Plug>(skkeleton-enable);"
 endif
